@@ -1,3 +1,4 @@
+#!/bin/bash
 COMPUTER_NAME="kb-macbook"
 
 osascript -e 'tell application "System Preferences" to quit'
