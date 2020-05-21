@@ -1,5 +1,4 @@
-" Lives in $HOME/.vimrc for Linux/macOS and $HOME/_vimrc for Windows
-" :echo $HOME to see value
+" Features
  
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
@@ -27,9 +26,6 @@ set wildmenu
 " Display line numbers on the left
 set number
 
-" Show line number on the current line and relative numbers on all other lines
-" set relativenumber
-
 " Show partial commands in the last line of the screen
 set showcmd
 
@@ -43,16 +39,8 @@ set hlsearch
 set ignorecase
 set smartcase
  
-" Avoid wrapping a line in the middle of a word
-set linebreak
-
-" Enable line wrapping
-set wrap
-
-" Number of screen lines to keep above and below the cursor
-set scrolloff=1
-
-" Always show cursor position
+" Display the cursor position on the last line of the screen or in the status
+" line of a window
 set ruler
 
 " Highlight matching block delimeter [{()}]
@@ -80,12 +68,6 @@ set visualbell
 
 " Enable use of the mouse for all modes
 "set mouse=a
-
-" Increase the undo limit
-" set history=1000:
-
-" Enable spellchecking
-" set spell:
  
 " Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
@@ -94,7 +76,7 @@ set visualbell
 " Allows you to re-use the same window and switch from an unsaved buffer without 
 " saving it first. AKA easy switching between multiple files in the same editor window
 "set hidden
-
+ 
 "------------------------------------------------------------
 " Status Line
 
@@ -113,17 +95,9 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-" New lines inherit the indentation of previous lines
+" When opening a new line and no filetype-specific indenting is enabled, keep
+" the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
-
-" Enable indentation rules that are file-type specific
-set filetype indent on
-
-" Disable folding by default
-set nofoldenable
-
-" Fold based on indention levels
-set foldmethod=indent
 
 "------------------------------------------------------------
 " Colors
@@ -145,7 +119,3 @@ set background=dark
 map Y y$
  
 "------------------------------------------------------------
-" Configuration
-
-" Directory to store swap files
-" set dir=~/.cache/vim
