@@ -1,0 +1,30 @@
+[alias]
+	st = status -s -b
+	lg = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative -20
+
+	ac = !git add -A && git commit -m 
+	oops = !git add -A && git commit --amend --no-edit
+
+    current = rev-parse --abbrev-ref HEAD
+
+    # push new branches to origin
+	pto = !CURRENT=$(git current) && git push origin $CURRENT
+	pfo = !CURRENT=$(git current) && git pull origin $CURRENT
+
+	rh = "!f() { \
+        git reset --hard HEAD~$1; \
+      	}; f"
+
+	rs = "!f() { \
+        git reset --soft HEAD~$1; \
+      	}; f"
+
+	rsh = "!f() { \
+        git reset --soft $1; \
+      	}; f"
+
+	rhh = "!f() { \
+        git reset --hard $1; \
+      	}; f"
+
+	rhH = !git add -A && reset --hard HEAD
